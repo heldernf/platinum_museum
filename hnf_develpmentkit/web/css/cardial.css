@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: transparent;
+    font-family: Arial, sans-serif;
+    display: none;
+}
+
+.rosa-dos-ventos {
+    top: 2rem;
+    left: 2rem;
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.rosa-dos-ventos .direction {
+    position: absolute;
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: .9rem;
+}
+
+#north {
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#northeast {
+    top: 15%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+
+#east {
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+}
+
+#southeast {
+    bottom: 15%;
+    left: 85%;
+    transform: translate(-50%, 50%);
+}
+
+#south {
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#southwest {
+    bottom: 15%;
+    left: 15%;
+    transform: translate(-50%, 50%);
+}
+
+#west {
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+}
+
+#northwest {
+    top: 15%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+}
+
+.rosa-dos-ventos::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#player-heading {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 5px;
+    border-radius: 5px;
+}

@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Kanit", sans-serif;
+	user-select: none;
+	color: #fff;
+}
+
+*:focus {
+	outline: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: transparent;
+	overflow: hidden;
+	padding: 4rem;
+}
+
+#App {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* ---------------------------------------- */
+
+/* LOGO */
+#logo {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#logo :first-child {
+	display: block;
+}
+
+/* ------ LOCALIZAÇÃO | HORAS | FALA | RADIO ------ */
+
+#locRadioOther {
+	display: flex;
+	gap: 1.1rem;
+	width: max-content;
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+}
+
+.containerInfo {
+	display: flex;
+	gap: .4rem;
+	width: max-content;
+}
+
+.boxIcon {
+	width: 2.2rem;
+	height: 2.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00000066;
+	border-radius: .2rem;
+}
+
+.boxIcon :first-child {
+	width: 1.4rem;
+	height: 1.4rem;
+}
+
+.boxInfo {
+	height: 2.2rem;
+	display: flex;
+	align-items: center;
+	font-size: 1.4rem;
+	font-weight: 600;
+	background-color: #00000040;
+	padding: 0 .75rem;
+	border-radius: .2rem;
+}
+
+/* ------ REPOUSO E PROCURADO ------ */
+
+#statusTime {
+	position: absolute;
+	top: 4.8rem;
+	left: 2rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	gap: .6rem 1.1rem;
+	width: min-content;
+}
+
+.statusBox {
+	display: flex;
+	gap: 0 .4rem;
+}
+
+.statusSvgBox {
+	width: 2.2rem;
+	height: 2.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00000066;
+	border-radius: .2rem;
+}
+
+.statusSvgBox svg {
+	height: 1.4rem;
+	width: auto;
+}
+
+.statusTimer {
+	width: max-content;
+	height: 2.2rem;
+	display: flex;
+	align-items: center;
+	font-size: 1.4rem;
+	font-weight: 500;
+	background-color: #00000040;
+	border-radius: .2rem;
+	padding: 0 .8rem;
+}
+
+/* ------ MENU INFO DAS ARMA EQUIPADA ------ */
+
+#WeaponsInfo {
+	position: absolute;
+	top: 11rem;
+	left: 2rem;
+}
+
+#containerNameWeapon {
+	display: flex;
+	align-items: center;
+	gap: 0 .6rem;
+}
+
+#containerNameWeapon svg {
+	height: auto;
+	width: 1.7rem;
+}
+
+#NameWeapon {
+	font-size: 1.8rem;
+	font-weight: 600;
+	line-height: 1;
+	color: #ffffffbf;
+}
+
+#containerBullets {
+	display: flex;
+	align-items: center;
+	gap: 0 .6rem;
+}
+
+#containerBullets svg {
+	height: 2.1rem;
+	width: auto;
+}
+
+#bullets {
+	position: relative;
+}
+
+#MinBullets {
+	font-size: 2.2rem;
+	font-weight: 500;
+	color: #ffffffbf;
+}
+
+#MaxBullets {
+	position: absolute;
+	font-size: 1.3rem;
+	font-weight: 500;
+	top: 0;
+	left: calc(100% + .4rem);
+	color: #ffffffbf;
+}
+
+/* BARRA DE PROGRESSO DE USO */
+
+#Progress {
+	position: absolute;
+	bottom: 18rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#progressSVG {
+	transform: rotate(-90deg);
+	display: block;
+}
+
+#ProgressBar {
+	stroke: #00DB58;
+	stroke-dashoffset: 360;
+	stroke-dasharray: 360;
+	width: 100%;
+	transition: .3s;
+}
+
+#DotRotate {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	transition: .3s;
+}
+
+#DotProgress {
+	fill: #00DB58;
+	position: absolute;
+	top: -.375rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#ProgressNum {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.7rem;
+	font-weight: 600;
+}
+
+/* ------ VELOCÍMETRO E OUTROS RELACIONADO AO CARRO ------ */
+
+#Vehicle {
+	display: grid;
+	/* GRID */
+	grid-template-areas:
+		"gasolina gasolina"
+		"iconCar gasolinaBar"
+		"KmNitro gasolinaBar"
+	;
+	width: max-content;
+	position: absolute;
+	right: 0;
+	bottom: 1rem;
+}
+
+#gasolinaPorcento {
+	grid-area: gasolina;
+	font-weight: 600;
+	font-size: 1.4rem;
+	line-height: 1;
+	justify-self: end;
+	padding-bottom: .4rem;
+	filter: drop-shadow(0 0 .4rem #ffffff40);
+}
+
+#containerIconCar {
+	display: flex;
+	gap: 2.3rem;
+	grid-area: iconCar;
+	width: 20.2rem;
+}
+
+.iconCar {
+	display: flex;
+	gap: .6rem;
+}
+
+.iconCar svg {
+	width: auto;
+	height: 2.2rem;
+	filter: drop-shadow(0 0 .4rem #ffffff40);
+}
+
+.barOffOnToggle {
+	height: 1.2rem;
+	width: .4rem;
+	background-color: #DB0000;
+	display: block;
+	margin-top: auto;
+	border-radius: .2rem;
+}
+
+#engine {
+	position: relative;
+}
+
+#EngineHealth {
+	position: absolute;
+	top: -22%;
+	left: 100%;
+	transform: translateX(-50%);
+	font-weight: 600;
+	font-size: 1.1rem;
+	filter: drop-shadow(0 0 .4rem #ffffff40);
+}
+
+/* jQuery */
+.ActivedCarIcon {
+	background-color: #00DB58;
+}
+
+/* jQuery */
+.MediumEgineCarIcon {
+	background-color: #DAC400;
+}
+
+/* jQuery */
+.LowEgineCarIcon {
+	background-color: #DB0000;
+}
+
+#iconGasolina {
+	margin-left: auto;
+	margin-right: .3rem;
+	height: 1.6rem;
+	width: auto;
+	filter: drop-shadow(0 0 .4rem #ffffff40);
+}
+
+#kmNitro {
+	grid-area: KmNitro;
+	padding-top: 1.6rem;
+	display: flex;
+}
+
+#containerVelocidade {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#NumSpeed {
+	font-size: 5.5rem;
+	font-weight: 600;
+	letter-spacing: .5rem;
+	line-height: .75;
+	position: absolute;
+	top: 0;
+	right: 0;
+	filter: drop-shadow(0 0 .4rem #ffffff4d);
+}
+
+#SpeedDesguise {
+	color: #ffffff80;
+}
+
+#groupKmNitro {
+	padding-right: 1.5rem;
+	width: max-content;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#nitro {
+	display: inline-block;
+	margin-left: .15rem;
+	width: 3.6rem;
+	position: relative;
+}
+
+#NitroFill1,
+#NitroFill2 {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-color: #ffffff99;
+	mask-image: url(nitro-icon.svg);
+	mask-size: cover;
+	mask-repeat: no-repeat;
+	-webkit-mask-image: url(nitro-icon.svg);
+	-webkit-mask-size: cover;
+	-webkit-mask-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#NitroFill3,
+#NitroFill4 {
+	height: 100%;
+	width: 0;
+	display: block;
+	background-color: #00DB58;
+	mask-image: url(nitro-icon.svg);
+	mask-size: cover;
+	mask-repeat: no-repeat;
+	-webkit-mask-image: url(nitro-icon.svg);
+	-webkit-mask-size: cover;
+	-webkit-mask-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: .3s;
+}
+
+#Gear {
+	width: 1.6rem;
+	height: 1.6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 1;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #ffffff99;
+	border: .2rem solid #ffffff99;
+	border-radius: .2rem;
+	margin-left: .2rem;
+}
+
+#unidadeVelocidade {
+	font-size: 3rem;
+	font-weight: 600;
+	color: #ffffff99;
+	line-height: .85;
+	display: block;
+}
+
+#fuelGroup {
+	display: block;
+	width: .4rem;
+	height: 99%;
+	border-radius: .2rem;
+	grid-area: gasolinaBar;
+	filter: drop-shadow(0 0 .4rem #ffffff40);
+}
+
+#FuelProgress {
+	stroke-dashoffset: 0;
+	stroke-dasharray: 100;
+	transition: .7s;
+}
+
+/* ------ STATUS DO PLAYER ------ */
+
+#containerPlayerStatus {
+	display: flex;
+	transition: .7s;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+#StatusSideLeft,
+#StatusSideRight {
+	display: flex;
+	flex-direction: column;
+	gap: .25rem 0;
+}
+
+#StatusSideRight {
+	position: absolute;
+	left: 4.2rem;
+	bottom: 2.5rem;
+	width: max-content;
+}
+
+.playerStatus {
+	height: 4.75rem;
+	width: 100%;
+}
+
+.playerStatus svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* VIDA */
+#Health {
+	stroke: #c71b3d;
+}
+
+#Health+path {
+	fill: #c71b3d;
+	filter: drop-shadow(0 0 .3rem #ff003380);
+}
+
+/* COLETE */
+#Armour {
+	stroke: #fff;
+}
+
+#Armour+path {
+	fill: #fff;
+	filter: drop-shadow(0 0 .3rem #ffffff80);
+}
+
+/* FOME */
+#Hunger {
+	stroke: #92d421;
+}
+
+#Hunger+path {
+	fill: #92d421;
+	filter: drop-shadow(0 0 .3rem #92d42180);
+}
+
+/* SEDE */
+#Thirst {
+	stroke: #1bd2d4;
+}
+
+#Thirst+path {
+	fill: #1bd2d4;
+	filter: drop-shadow(0 0 .3rem #1cd1d480);
+}
+
+/* Oxigênio Tanque Mergulho */
+#Oxigenio {
+	stroke: #6D0BCE;
+}
+
+#Oxigenio+path {
+	fill: #6D0BCE;
+	filter: drop-shadow(0 0 .3rem #6c0acf80);
+}
+
+/* ESTRESSE */
+#Stress {
+	stroke: #d5248d;
+}
+
+#Stress+path {
+	fill: #d5248d;
+	filter: drop-shadow(0 0 .3rem #d6248f80);
+}
+
+/* SET GERAL */
+#Health,
+#Armour,
+#Hunger,
+#Thirst,
+#Oxigenio,
+#Stress {
+	stroke-dashoffset: 0;
+	stroke-dasharray: 100;
+	transition: .4s ease-out;
+}
+
+/* OS ELEMENTOS ABAIXO DEVEM SER ESCONDIDOS PARA O FUNCIONAMENTO DO 'HUD' */
+
+#App,
+#RadioContainer,
+.statusBox,
+#WeaponsInfo,
+#Progress,
+#Vehicle,
+#ArmourBox,
+#OxigenioBox,
+#StressBox {
+	display: none;
+}
